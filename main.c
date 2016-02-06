@@ -12,14 +12,16 @@
  */
 
 #include <stdio.h>
-/* count characters in input; 2nd version  */
+/*1.5.3 count lines in input */
 int main() {
-    double nc;
-    char c;
-    c = getchar();
-    for (int nc = 0; getchar() != EOF; ++nc) //It doesn't work!!!
-        ;
-    printf("%.0f\n", nc);
+    int c, nl;
+    
+    nl = 0;
+    while ((c = getchar()) != EOF) 
+        if (c == '\n')
+            ++nl;
+    printf("%d\n", nl);
+    return 0;
 }
 
 
