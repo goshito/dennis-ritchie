@@ -26,13 +26,13 @@ int main(int argc, char** argv) {
     upper = 300;    /* upper limit */
     step = 20;      /* step size */
     
-    fahr = lower;
+    fahr = upper;
     
     printf("Welcome to the fahr to celsius program!\n\n");
-    while (fahr <= upper) {
+    while (fahr >= lower) {
         celsius = (5.0 / 9.0) * (fahr - 32);
         printf("%.2f %.2f\n", fahr, celsius);
-        fahr = fahr + step;
+        fahr = fahr - step;
     }
 
     return (EXIT_SUCCESS);
