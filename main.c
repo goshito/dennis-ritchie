@@ -12,13 +12,18 @@
  */
 
 #include <stdio.h>
-/* copy input to output; 2ND version */
+/* Exercise 1-6. Verify that the expression qetchar () != EOF is 0 or 1 */
 int main() {
     int c;
-        
-    while ( ((c = getchar())!= EOF)) {
-        putchar(c);
+    c = (getchar() != EOF);
+    if (c == 0) {
+        printf("Zero");
+    } else if (c == 1) {
+        printf("One");
+    } else {
+        puts("Not Zero, neither One");
     }
+    return 0;
 }
 
 
