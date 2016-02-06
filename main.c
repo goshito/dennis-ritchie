@@ -12,21 +12,15 @@
  */
 
 #include <stdio.h>
-
-#define LOWER 0     /* lower limit of table */
-#define UPPER 300   /* upper limit */
-#define STEP 20     /* step size */
-
-/* printf Fahreheit-Celsius table */
-
+/* copy input to output; 1st version */
 int main() {
-    int fahr;
+    int c;
     
-    for (fahr = LOWER; fahr <= UPPER; fahr = fahr + STEP) {
-        printf("%3d %6.1f\n", fahr, ((5.0/9.0)*(fahr-32)));
+    c = getchar();
+    while (c != EOF) {
+        putchar(c);
+        c = getchar();
     }
-    return 0;
 }
-
 
 
