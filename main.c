@@ -12,29 +12,21 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h>
 
-/*
- * Print Fahrenheit-Celcius table
- * for fahr = 0, 20, ..., 300
- */
-int main(int argc, char** argv) {
-    float fahr, celsius;
-    int lower, upper, step;
+#define LOWER 0     /* lower limit of table */
+#define UPPER 300   /* upper limit */
+#define STEP 20     /* step size */
+
+/* printf Fahreheit-Celsius table */
+
+int main() {
+    int fahr;
     
-    lower = 0;      /* lower limit of temperature table */
-    upper = 300;    /* upper limit */
-    step = 20;      /* step size */
-    
-    fahr = upper;
-    
-    printf("Welcome to the fahr to celsius program!\n\n");
-    while (fahr >= lower) {
-        celsius = (5.0 / 9.0) * (fahr - 32);
-        printf("%.2f %.2f\n", fahr, celsius);
-        fahr = fahr - step;
+    for (fahr = LOWER; fahr <= UPPER; fahr = fahr + STEP) {
+        printf("%3d %6.1f\n", fahr, ((5.0/9.0)*(fahr-32)));
     }
-
-    return (EXIT_SUCCESS);
+    return 0;
 }
+
+
 
