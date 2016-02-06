@@ -12,14 +12,14 @@
  */
 
 #include <stdio.h>
-/* count characters in input; 1st version  */
-main() {
-    long nc;
-    
-    nc = 0;
-    while (getchar() != EOF)
-        ++nc;
-    printf("%ld\n", nc);
+/* count characters in input; 2nd version  */
+int main() {
+    double nc;
+    char c;
+    c = getchar();
+    for (int nc = 0; getchar() != EOF; ++nc) //It doesn't work!!!
+        ;
+    printf("%.0f\n", nc);
 }
 
 
