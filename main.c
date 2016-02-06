@@ -12,17 +12,9 @@
  */
 
 #include <stdio.h>
-/* Exercise 1-6. Verify that the expression qetchar () != EOF is 0 or 1 */
+/* Exercise 1-7. Write a program to print the value of EOF */
 int main() {
-    int c;
-    c = (getchar() != EOF);
-    if (c == 0) {
-        printf("Zero");
-    } else if (c == 1) {
-        printf("One");
-    } else {
-        puts("Not Zero, neither One");
-    }
+    printf("%d", EOF);
     return 0;
 }
 
