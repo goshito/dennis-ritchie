@@ -31,7 +31,7 @@ int main(int argc, char** argv) {
     printf("Welcome to the fahr to celsius program!\n\n");
     while (fahr <= upper) {
         celsius = (5.0 / 9.0) * (fahr - 32);
-        printf("%.2f %.1f\n", fahr, celsius);
+        printf("%.2f %.2f\n", fahr, celsius);
         fahr = fahr + step;
     }
 
