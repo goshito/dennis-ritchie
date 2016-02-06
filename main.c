@@ -12,25 +12,21 @@
  */
 
 #include <stdio.h>
-/* Exercise 1..8. Write a program to count blanks, tabs, and newline */
+/* Exercise 1-9. Write a program to copy its input to its output, replacing each
+string of one or more blanks by a single blank */
 int main() {
-    int c, nl, nt, ns;
+    int c;
     
-    nl = 0;
-    nt = 0;
-    ns = 0;
     while ((c = getchar()) != EOF) {
-        if (c == '\n') {
-            ++nl;                    
-        }
-        if (c == '\t') {
-            ++nt;
-        }
         if (c == ' ') {
-            ++ns;
+            while ((c = getchar()) == ' ') {
+                putchar(' ');
+                if (c == EOF) {
+                    break;
+                }
+            }
         }
     }
-    printf("%dlines\n%dtabs\n%dspaces\n", nl, nt, ns);
     return 0;
 }
 
