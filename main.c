@@ -19,7 +19,7 @@
  * for fahr = 0, 20, ..., 300
  */
 int main(int argc, char** argv) {
-    int fahr, celsius;
+    float fahr, celsius;
     int lower, upper, step;
     
     lower = 0;      /* lower limit of temperature table */
@@ -27,9 +27,11 @@ int main(int argc, char** argv) {
     step = 20;      /* step size */
     
     fahr = lower;
+    
+    printf("Welcome to the fahr to celsius program!\n\n");
     while (fahr <= upper) {
-        celsius = 5 * (fahr - 32) / 9;
-        printf("%d\t%d\n", fahr, celsius);
+        celsius = (5.0 / 9.0) * (fahr - 32);
+        printf("%.2f %.1f\n", fahr, celsius);
         fahr = fahr + step;
     }
 
