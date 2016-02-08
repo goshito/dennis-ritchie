@@ -12,25 +12,29 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h>
+//why it doesn't recognize digits
+// count digits, white space, others
 
-#define TRUE  1
-#define FALSE 0
-
-int main(void)
-{
-    int c, prevblank;
-
-    prevblank = FALSE;
-    while ((c = getchar()) != EOF) {
-        if (c == ' ' || c == '\t' || c == '\n') {
-            if (prevblank == FALSE)
-                putchar('\n');
-            prevblank = TRUE;
-        } else {
-            prevblank = FALSE;
-            putchar(c);
-        }
-    }
-    return EXIT_SUCCESS;
+int main() {
+    int c, i, nwhite, nother;
+    int ndigit[10];
+    
+    nwhite = nother = 0;
+    for (i = 0; i < 10; i++)
+        ndigit[i] = 0;
+    
+    while ((c = getchar() != EOF))
+            if (c >= '0' && c <= '9')
+                ++ndigit[c-'0'];
+            else if (c == ' ' || c == '\n' || c == '\t')
+                ++nwhite;
+            else
+                ++nother;
+            
+    printf("digits =");
+    for (i = 0; i < 10; ++i)
+        printf(" %d", ndigit[i]);
+    printf(", whitespace = %d, other = %d\n", 
+            nwhite, nother);          
+    
 }
