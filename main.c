@@ -1,11 +1,14 @@
 #include <stdio.h>
-
-main() {
-    long nc;
-    
-    nc = 0;
-    while (getchar() != EOF) {
-        ++nc;        
+//count lines in input
+int main() {
+    int c, nl;
+    nl = 0;
+    while ((c = getchar()) != EOF) {
+        if (c == '\n') {
+            ++nl;
+        }
     }
-    printf("%ld\n", nc);
+    printf("\n%d lines", nl);
+    
+    return 0;
 }
