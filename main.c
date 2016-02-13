@@ -1,14 +1,18 @@
 #include <stdio.h>
-//Exercise 1-9. Write a program to copy its input to its output, replacing each
-//string of one or more blanks by a single blank
+/*Exercise 1-10, page 20*/
 int main() {
-    char c;
+    int c;
     
     while ((c = getchar()) != EOF) {
-        if (c == ' ') {
-            c = ' ';
-            putchar(c);
-        }
+        if (c == '\t') {
+            printf("\\t");
+            }
+         if (c == '\b') {
+            printf("\\b");
+            }
+         if (c == '\\') {
+                printf("\\\\");
+            }
     }
     return 0;
 }
