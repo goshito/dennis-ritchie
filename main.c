@@ -8,7 +8,7 @@ int main() {
             printf("\\t");
             }
          if (c == '\b') {
-            printf("\\b");
+            printf("\\b"); //doesn't work, why?
             }
          if (c == '\\') {
                 printf("\\\\");
