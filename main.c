@@ -1,24 +1,11 @@
-/*The C Programming Language, 2nd Edition, by Kernighan and Ritchie
-Exercise 1.03 on page 13*/
+/*The for statement*/
 
 #include <stdio.h>
 
-int main(void)
-{
-  float fahr, celsius;
-  int lower, upper, step;
+/*Print fahrenheit-Celsius table*/
 
-  lower = 0;
-  upper = 300;
-  step = 20;
-
-  printf("F     C\n\n");
-  fahr = lower;
-  while(fahr <= upper)
-  {
-    celsius = (5.0 / 9.0) * (fahr - 32.0);
-    printf("%3.0f %6.1f\n", fahr, celsius);
-    fahr = fahr + step;
-  }
-  return 0;
+int main(void) {
+    for (int fahr = 0; fahr <= 300; fahr = fahr + 20) {
+        printf("%3d %6.1f\n", fahr, (5.0/9.0) * (fahr - 32));
+    }
 }
