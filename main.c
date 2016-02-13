@@ -1,18 +1,24 @@
 #include <stdio.h>
-/*Exercise 1-10, page 20*/
-int main() {
-    int c;
+//1.5.4 word counting
+//count lines, words, and characters in input, p.20
+#define IN 1
+#define OUT 0
+
+main() {
+    int c, nl, nw, nc, state;
     
+    state = OUT;
+    nl = nw = nc = 0;
     while ((c = getchar()) != EOF) {
-        if (c == '\t') {
-            printf("\\t");
-            }
-         if (c == '\b') {
-            printf("\\b"); //doesn't work, why?
-            }
-         if (c == '\\') {
-                printf("\\\\");
-            }
+        ++nc;
+        if (c == '\n')
+            ++nl;
+        if (c == ' ' || c == '\n' || c == '\t')
+            state = OUT;
+        else if (state == OUT) {
+            state = IN;
+            ++nw;
+        }
     }
-    return 0;
+    printf("%d lines %d words %d characters\n", nl, nw, nc);
 }
