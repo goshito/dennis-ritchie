@@ -1,12 +1,24 @@
 /*The C Programming Language, 2nd Edition, by Kernighan and Ritchie
-Exercise 1.02 on page 8*/
+Exercise 1.03 on page 13*/
 
 #include <stdio.h>
 
-int main(void) {
-    printf("Audible or visual alert. \a\n");
-    printf("Form feed. \f\n");
-    printf("This escape, \r, moves the active position to the initial position of the current line.\n");
-    printf("Vertical tab \v is tricky, as its behaviour is unspecified under certain conditions.\n");
-    return 0;
+int main(void)
+{
+  float fahr, celsius;
+  int lower, upper, step;
+
+  lower = 0;
+  upper = 300;
+  step = 20;
+
+  printf("F     C\n\n");
+  fahr = lower;
+  while(fahr <= upper)
+  {
+    celsius = (5.0 / 9.0) * (fahr - 32.0);
+    printf("%3.0f %6.1f\n", fahr, celsius);
+    fahr = fahr + step;
+  }
+  return 0;
 }
