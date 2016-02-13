@@ -1,14 +1,21 @@
 #include <stdio.h>
-//count lines in input
+//Ex. 1.8Write a program to count blanks, tabs, and newline
 int main() {
-    int c, nl;
-    nl = 0;
-    while ((c = getchar()) != EOF) {
+    int nb = 0, nt = 0, nl = 0;
+    char c;
+    
+    while ((c = getchar())!= EOF) {
+        if (c == ' ') {
+            ++nb;
+        }
+        if (c == '\t') {
+            ++nt;
+        }
         if (c == '\n') {
             ++nl;
         }
     }
-    printf("\n%d lines", nl);
+    printf("\n%d blanks\n%d tabs\n%d lines", nb, nt, nl);
     
     return 0;
 }
