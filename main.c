@@ -1,9 +1,8 @@
 #include <stdio.h>
-// copy input to output 2nd  version
-int main() {
-    int c;
-    
-    while ((c = getchar()) != EOF) {
-        putchar(c);
-    }
+
+int main(void)
+{
+  printf("Press a key. ENTER would be nice :-)\n\n");
+  printf("The expression getchar() != EOF evaluates to %d\n", getchar() != EOF);
+  return 0;
 }
