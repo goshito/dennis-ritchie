@@ -1,24 +1,21 @@
 #include <stdio.h>
-//1.5.4 word counting
-//count lines, words, and characters in input, p.20
-#define IN 1
-#define OUT 0
 
-main() {
-    int c, nl, nw, nc, state;
+#define TRUE 1
+#define FALSE 0
+/*Exercise 1-12. Write a program that prints its input one word per line.*/
+int main() {
+    int c, prevblank;
     
-    state = OUT;
-    nl = nw = nc = 0;
+    prevblank = FALSE;
     while ((c = getchar()) != EOF) {
-        ++nc;
-        if (c == '\n')
-            ++nl;
-        if (c == ' ' || c == '\n' || c == '\t')
-            state = OUT;
-        else if (state == OUT) {
-            state = IN;
-            ++nw;
+        if (c == ' ' || c == '\t' || c == '\n') {
+            //if (prevblank == FALSE)
+                putchar('\n');
+            //prevblank = TRUE;
+        } else {
+            //prevblank = FALSE;
+            putchar(c);
         }
     }
-    printf("%d lines %d words %d characters\n", nl, nw, nc);
+    return 0;
 }
