@@ -1,21 +1,26 @@
 #include <stdio.h>
 
-#define TRUE 1
-#define FALSE 0
-/*Exercise 1-12. Write a program that prints its input one word per line.*/
+/*count digits, white space, others p.22*/
 int main() {
-    int c, prevblank;
+    int c, i, nwhite, nother;
+    int ndigit[10];
     
-    prevblank = FALSE;
-    while ((c = getchar()) != EOF) {
-        if (c == ' ' || c == '\t' || c == '\n') {
-            //if (prevblank == FALSE)
-                putchar('\n');
-            //prevblank = TRUE;
-        } else {
-            //prevblank = FALSE;
-            putchar(c);
-        }
-    }
+    nwhite = nother = 0;
+    for (i = 0; i < 10; ++i)
+        ndigit[i] = 0;
+    
+    while ((c = getchar()) != EOF) 
+        if (c >= '0' && c <= '9')
+            ++ndigit[c-'0'];
+        else if (c == ' ' || c == '\n' || c == '\t')
+            ++nwhite;
+        else
+            ++nother;
+        
+    printf("digits = ");
+    for (i = 0; i < 10; ++i)
+        printf(" %c", ndigit[i]);
+    printf(", white space = %d, other = %d\n", nwhite, nother);        
+            
     return 0;
 }
